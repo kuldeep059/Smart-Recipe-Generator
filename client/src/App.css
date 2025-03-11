@@ -1,0 +1,162 @@
+.App {
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #959df0, #141946, #3f51b5); /* Dark, shiny blue */
+  background-size: 400% 400%;
+  animation: backgroundAnimation 15s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.App-content-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.App h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #28a745;
+  text-align: center;
+}
+
+.App > div {
+  margin-bottom: 1.5rem;
+}
+
+.App label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.App textarea,
+.App select,
+.App input[type="file"] {
+  width: calc(100% - 1rem);
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.App button {
+  padding: 0.75rem 1.5rem;
+  background-color: #014083;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.App button:hover {
+  background-color: #2dc778;
+}
+
+.App ul {
+  list-style: none;
+  padding: 0;
+}
+
+.App li {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.App h2 {
+  color: #3498db;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.App li h3 {
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+}
+
+.App li p {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.App li strong {
+  font-weight: 600;
+  color: #777;
+}
+
+.App input[type="radio"] {
+  margin-right: 0.3rem;
+}
+
+.App label[for^="rating-"] {
+  margin-right: 0.5rem;
+}
+
+.App label[for="imageUpload"] {
+  margin-bottom: 0.8rem;
+}
+
+.App input[type="file"] {
+  border: none;
+  padding: 0;
+}
+
+.App div[style*="display: flex"] {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.App div[style*="text-align: center"] {
+  text-align: center;
+  margin-top: 1rem;
+  color: #95a5a6;
+}
+
+/* Image styling */
+.App img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .App-content-container,
+  .App ul {
+    width: 95%;
+  }
+}
