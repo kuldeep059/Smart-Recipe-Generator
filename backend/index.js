@@ -3,14 +3,22 @@ const express = require('express');
 const vision = require('@google-cloud/vision');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const fs = require('fs'); // Import the fs module
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 
-const client = new vision.ImageAnnotatorClient({
-  keyFilename: 'google-credentials.json',
-});
+// This is where you'll decode the credentials
+const credentialsBase64 = process.env.GOOGLE_CREDENTIALS_BASE64;
+if (credentialsBase64) {
+    const decodedCredentials = Buffer.from(credentialsBase64, 'base64').toString('utf-8');
+    fs.writeFileSync('google-credentials.json', decodedCredentials);
+    process.env.GOOGLE_APPLICATION_CREDENTIALS = 'google-credentials.json';
+}
+
+// Now initialize the client
+const client = new vision.ImageAnnotatorClient();
 
 app.get('/test', (req, res) => {
   res.send('Backend is running!');
