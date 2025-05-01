@@ -73,4 +73,3 @@ This application utilizes a React.js frontend for a dynamic user interface and F
 -   More detailed nutritional information.
 -   Enhanced image recognition accuracy.
 -   User accounts and personalized recipe suggestions.
--   Shopping list generation.
